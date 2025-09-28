@@ -1,50 +1,222 @@
-# Welcome to your Expo app 👋
+# 🎓 ScaleUp - IITB Community Platform
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern React Native community platform designed specifically for IITB students to connect, share, and engage with their peers through hierarchical communities.
 
-## Get started
+## 🌟 Features
 
-1. Install dependencies
+### 🏘️ **Community Management**
+- **Hierarchical Communities**: Create parent communities and sub-communities
+- **Join Request System**: Admin approval required for community access
+- **Auto-join Child Communities**: Admins can automatically join users to child communities
+- **Community Creation**: Easy community setup with type selection
 
+### 📝 **Content & Engagement**
+- **Rich Post System**: Create posts with voting, comments, and likes
+- **Interactive Comments**: Nested comment system with like functionality
+- **Voting System**: Upvote/downvote posts to build community engagement
+- **Real-time Updates**: Live refresh system for content updates
+
+### 👥 **User Management**
+- **Role-based Access**: Admin and regular user roles
+- **Impact Points System**: Gamified engagement tracking
+- **Badge System**: Achievement recognition for active users
+- **Profile Management**: Comprehensive user profiles
+
+### 🔐 **Authentication & Security**
+- **Secure Login/Signup**: Email-based authentication
+- **Admin Dashboard**: Join request management and community oversight
+- **Session Management**: Persistent user sessions
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI (`npm install -g @expo/cli`)
+- Expo Go app on your mobile device (optional)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd scaleup
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. **Start the development server**
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Run the app**
+   - **Web**: Press `w` or visit http://localhost:8081
+   - **Mobile**: Scan QR code with Expo Go app
+   - **Android**: Press `a` (requires Android Studio)
+   - **iOS**: Press `i` (requires Xcode on Mac)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📱 App Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Navigation
+- **Communities Tab**: Main hub for community management and posts
+- **Explore Tab**: Feed of posts from joined communities
+- **Notifications Tab**: User notifications and updates
+- **Profile Tab**: User profile and admin dashboard access
 
-## Get a fresh project
+### Key Screens
+- **CommunitiesScreen**: Create and manage communities
+- **ExploreScreen**: Browse posts from all joined communities
+- **AdminDashboard**: Manage join requests and community oversight
+- **AuthScreen**: Login/signup with beautiful animations
 
-When you're ready, run:
+## 🎨 Design System
 
-```bash
-npm run reset-project
+### Color Palette
+- **Primary**: Deep Teal (`#08313B`) - IITB inspired
+- **Secondary**: Bright Teal (`#00D1B2`)
+- **Accent**: Gold (`#FFC107`)
+- **Background**: Light Blue-Gray (`#F4FAFC`)
+
+### Typography
+- **Headings**: Bold, hierarchical typography
+- **Body**: Clean, readable text
+- **Captions**: Subtle secondary information
+
+### Components
+- **AnimatedButton**: Custom buttons with press animations
+- **AnimatedInput**: Floating label inputs with validation
+- **PostCard**: Rich post display with interactions
+- **CommunityCard**: Community information cards
+
+## 🔧 Technical Stack
+
+### Core Technologies
+- **React Native**: Cross-platform mobile development
+- **Expo**: Development platform and tools
+- **TypeScript**: Type-safe JavaScript
+- **Expo Router**: File-based navigation
+
+### Key Libraries
+- **React Navigation**: Tab and stack navigation
+- **React Native Reanimated**: Smooth animations
+- **Date-fns**: Date formatting and manipulation
+- **React Context**: State management
+
+### Development Tools
+- **ESLint**: Code linting and formatting
+- **TypeScript**: Static type checking
+- **Expo CLI**: Development and build tools
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── AnimatedButton.tsx
+│   ├── AnimatedInput.tsx
+│   ├── AppBar.tsx
+│   ├── CommunityCard.tsx
+│   ├── PostCard.tsx
+│   └── ...
+├── contexts/           # React Context providers
+│   └── AuthContext.tsx
+├── screens/            # App screens
+│   ├── CommunitiesScreen.tsx
+│   ├── ExploreScreen.tsx
+│   ├── ProfileScreen.tsx
+│   └── ...
+├── state/              # State management
+│   ├── store.tsx
+│   └── mockDB.ts
+├── constants/          # Design system
+│   └── theme.ts
+└── types/             # TypeScript definitions
+    └── auth.ts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎯 Usage Guide
 
-## Learn more
+### For Students
+1. **Login**: Use your IITB email to sign in
+2. **Browse Communities**: Explore available communities
+3. **Join Communities**: Request to join communities of interest
+4. **Create Posts**: Share updates and engage with peers
+5. **Vote & Comment**: Participate in community discussions
 
-To learn more about developing your project with Expo, look at the following resources:
+### For Admins
+1. **Admin Login**: Use `xyz@iitb.ac.in` for admin access
+2. **Manage Requests**: Approve/reject join requests in Profile → Admin Dashboard
+3. **Create Communities**: Set up new parent or sub-communities
+4. **Auto-join Users**: Automatically add users to child communities
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🚀 Development
 
-## Join the community
+### Available Scripts
+```bash
+npm start          # Start Expo development server
+npm run android    # Run on Android
+npm run ios        # Run on iOS
+npm run web        # Run on web
+npm run lint       # Run ESLint
+```
 
-Join our community of developers creating universal apps.
+### Key Features to Test
+- **Authentication**: Login with different user types
+- **Community Creation**: Create parent and child communities
+- **Post Interaction**: Create posts, vote, and comment
+- **Admin Functions**: Manage join requests
+- **Real-time Updates**: Refresh data across screens
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🎨 Customization
+
+### Theme Customization
+Edit `src/constants/theme.ts` to modify:
+- Colors and color schemes
+- Typography styles
+- Spacing and layout
+- Border radius and shadows
+
+### Adding New Features
+1. **New Screens**: Add to `src/screens/`
+2. **New Components**: Add to `src/components/`
+3. **State Management**: Extend `src/state/store.tsx`
+4. **API Integration**: Modify `src/state/mockDB.ts`
+
+## 🐛 Troubleshooting
+
+### Common Issues
+- **Metro bundler issues**: Clear cache with `npx expo start --clear`
+- **Dependencies**: Run `npm install` to ensure all packages are installed
+- **Expo Go**: Update to latest version for best compatibility
+
+### Debug Mode
+- Press `j` in terminal to open debugger
+- Use React Native Debugger for advanced debugging
+- Check console logs for error messages
+
+## 📄 License
+
+This project is developed for IITB hackathon purposes.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📞 Support
+
+For issues and questions:
+- Check the troubleshooting section
+- Review the code documentation
+- Contact the development team
+
+---
+
+**Built with ❤️ for IITB Students**
